@@ -1,16 +1,23 @@
 {
-  "name": "udx-calendara",
+  "name": "@udxsp/udx-calendara",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Parse, validate, manipulate, and display dates",
+  "private": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts --format cjs,esm --dts"
+    "dev": "vitest",
+    "test": "vitest run",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "ci": "pnpm run test && pnpm run build",
+    "release": "pnpm run test && pnpm run build && changeset publish"
   },
   "keywords": [],
   "author": "Luca Pulina",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@types/node": "^20.8.7",
     "@vitest/coverage-v8": "^0.34.6",
     "tsup": "^7.2.0",
