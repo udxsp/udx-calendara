@@ -1,0 +1,1 @@
+export const dateToStr = () => console.log('initial test')
