@@ -1,5 +1,5 @@
 {
-  "name": "@udxsp/udx-calendara",
+  "name": "udxsp/udx-calendara",
   "version": "0.0.2",
   "description": "Parse, validate, manipulate, and display dates",
   "private": false,
