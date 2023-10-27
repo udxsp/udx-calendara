@@ -11,7 +11,7 @@ export type UseDateFormatOptions = {
 type FormatDateParam = {
     date: Date
     formatStr: string
-    options: UseDateFormatOptions
+    options?: UseDateFormatOptions
 }
 
 const REGEX_PARSE =
@@ -39,14 +39,14 @@ export const formatDate = ({ date, formatStr, options }: FormatDateParam) => {
     const seconds = date.getSeconds()
     const milliseconds = date.getMilliseconds()
     const day = date.getDay()
-    const meridiem = options.customMeridiem ?? defaultMeridiem
+    const meridiem = options?.customMeridiem ?? defaultMeridiem
     const matches: Record<string, () => string | number> = {
         YY: () => String(years).slice(-2),
         YYYY: () => years,
         M: () => month + 1,
         MM: () => `${month + 1}`.padStart(2, '0'),
-        MMM: () => date.toLocaleDateString(options.locales, { month: 'short' }),
-        MMMM: () => date.toLocaleDateString(options.locales, { month: 'long' }),
+        MMM: () => date.toLocaleDateString(options?.locales, { month: 'short' }),
+        MMMM: () => date.toLocaleDateString(options?.locales, { month: 'long' }),
         D: () => String(days),
         DD: () => `${days}`.padStart(2, '0'),
         H: () => String(hours),
@@ -59,9 +59,9 @@ export const formatDate = ({ date, formatStr, options }: FormatDateParam) => {
         ss: () => `${seconds}`.padStart(2, '0'),
         SSS: () => `${milliseconds}`.padStart(3, '0'),
         d: () => day,
-        dd: () => date.toLocaleDateString(options.locales, { weekday: 'narrow' }),
-        ddd: () => date.toLocaleDateString(options.locales, { weekday: 'short' }),
-        dddd: () => date.toLocaleDateString(options.locales, { weekday: 'long' }),
+        dd: () => date.toLocaleDateString(options?.locales, { weekday: 'narrow' }),
+        ddd: () => date.toLocaleDateString(options?.locales, { weekday: 'short' }),
+        dddd: () => date.toLocaleDateString(options?.locales, { weekday: 'long' }),
         A: () => meridiem(hours, minutes),
         AA: () => meridiem(hours, minutes, false, true),
         a: () => meridiem(hours, minutes, true),
