@@ -1,5 +1,10 @@
 # @udxsp/udx-calendara
 
+## 0.1.0
+
+### Minor Changes
+
+-   update Readme, add Repo to package.json
 
 ## 0.0.6
 
@@ -7,7 +12,6 @@
 
 -   232601f: refactor structure index, types , test
 -   232601f: add utils methods addPeriod and subPeriod
-
 
 ## 0.0.5
 
