@@ -1,6 +1,6 @@
 {
   "name": "udx-calendara",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse, validate, manipulate, and display dates",
   "private": false,
   "repository": {
@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "vitest",
     "test": "vitest run",
+    "coverage": "vitest run --coverage",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "ci": "pnpm run test && pnpm run build",
     "release": "pnpm run test && pnpm run build && changeset publish"
