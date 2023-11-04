@@ -1,5 +1,11 @@
 # @udxsp/udx-calendara
 
+## 0.1.2
+
+### Patch Changes
+
+-   refactor code structure in better modules
+
 ## 0.1.1
 
 ### Patch Changes
